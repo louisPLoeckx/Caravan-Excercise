@@ -96,6 +96,14 @@ namespace Caravan_Excercise.Models
             {
                 aanhangwagen = trekbaar;//testen
             }
+            else if(snelheid != 0)
+            {
+                throw new Exception("Kan geen aanhangwagen koppelen. Snelheid niet 0");
+            }
+            else if (aanhangwagen.Gewicht > maximaalTrekGewicht)
+            {
+                throw new Exception("Kan geen aanhangwagen koppelen. Het gewicht van aanhangwagen is groter dan maximaal trek gewicht");
+            }
         }
 
         public void Versnel(int versnelling)

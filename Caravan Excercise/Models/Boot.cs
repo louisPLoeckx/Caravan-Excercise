@@ -7,7 +7,7 @@ using Caravan_Excercise.Interfaces;
 
 namespace Caravan_Excercise.Models
 {
-    public class Boot :Eigendom, IVoertuig
+    public abstract class Boot :Eigendom, IVoertuig
     {
         public int maximumSnelheid;
         public string merk;
@@ -55,7 +55,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public void Versnel(int versnelling)
+        public virtual void Versnel(int versnelling)
         {
             if (snelheid < maximumSnelheid)
             {
@@ -76,7 +76,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public void Vertraag(int vertraging)
+        public virtual void Vertraag(int vertraging)
         {
             if (snelheid > 0)
             {
