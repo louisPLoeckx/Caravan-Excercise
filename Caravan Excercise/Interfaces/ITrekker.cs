@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Interfaces
 {
-    interface ITrekker
+    public interface ITrekker
     {
         ITrekbaar Aanhangwagen { get; }
         int MaximaalTrekGewicht { get; }

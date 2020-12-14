@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Interfaces
 {
-    interface IBewoonbaar
+    public interface IBewoonbaar
     {
         int AantalSlaapkamers { get; }
         double BewoonbaarOppervlakte { get; }

@@ -67,7 +67,7 @@ namespace Caravan_Excercise.Models
             {
                 if (snelheid < 0 || aanhangwagen.Gewicht > MaximaalTrekGewicht)
                 {
-                    throw new Exception("Exception test Aanhangwagen Auto");                    
+                    Console.WriteLine("Exception test Aanhangwagen Auto");                    
                     //exception
                 }
                 else
@@ -90,19 +90,69 @@ namespace Caravan_Excercise.Models
             }       
         }
 
-        public void KoppelAanhangwagen(ITrekbaar aanhangwagen)
+        public void KoppelAanhangwagen(ITrekbaar trekbaar)
         {
-            throw new NotImplementedException();
+            if (snelheid == 0 && aanhangwagen.Gewicht <= maximaalTrekGewicht)
+            {
+                aanhangwagen = trekbaar;//testen
+            }
         }
 
         public void Versnel(int versnelling)
         {
-            throw new NotImplementedException();
+            if (snelheid < maximumSnelheid)
+            {
+                if (snelheid + versnelling <= maximumSnelheid)
+                {
+                    snelheid += versnelling;
+                }
+                else
+                {
+                    snelheid = maximumSnelheid;
+                }
+                Console.WriteLine($"Speed {snelheid}km/h");
+            }
+            else
+            {
+                Console.WriteLine($"Speed {snelheid}km/h");
+                Console.WriteLine("Maximum Speed has already been reached!");
+            }
+
         }
 
         public void Vertraag(int vertraging)
         {
-            throw new NotImplementedException();
+            if (snelheid > 0)
+            {
+                if (snelheid - vertraging >= 0)
+                {
+                    snelheid -= vertraging;
+
+                }
+                else
+                {
+                    snelheid = 0;
+
+                }
+
+                Console.WriteLine($"Speed {snelheid}km/h");
+
+            }
+            else
+            {
+                Console.WriteLine($"Speed {snelheid}km/h");
+                Console.WriteLine("The car has stopped and cannot go into reverse");
+            };
+
+        }
+
+        public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen)
+        {
+            MaximumSnelheid = maximumSnelheid;
+            Snelheid = snelheid;
+            MaximaalTrekGewicht = maximaalTrekGewicht;
+            Merk = merk;
+            Aanhangwagen = aanhangwagen;
         }
     }
 }

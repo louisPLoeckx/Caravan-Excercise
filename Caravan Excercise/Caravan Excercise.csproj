@@ -49,7 +49,9 @@
     <Compile Include="Interfaces\IVoertuig.cs" />
     <Compile Include="Models\Aanhangwagen.cs" />
     <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\Boot.cs" />
     <Compile Include="Models\Caravan.cs" />
+    <Compile Include="Models\Motorhome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

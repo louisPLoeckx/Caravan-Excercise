@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Interfaces
 {
-    interface IVoertuig
+    public interface IVoertuig
     {
         int MaximumSnelheid { get; }
         string Merk { get; }

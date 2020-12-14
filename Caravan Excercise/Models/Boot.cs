@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Caravan_Excercise.Interfaces
+namespace Caravan_Excercise.Models
 {
-    public interface ITrekbaar
+    class Boot
     {
-        int AantalBanden { get; }
-        int Gewicht { get; }
     }
 }
