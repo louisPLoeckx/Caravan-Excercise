@@ -26,6 +26,7 @@ namespace Caravan_Excercise
             {
                 Console.WriteLine(e.Message);
             }
+            Console.WriteLine("poop");
         }
     }
 }
