@@ -3,7 +3,7 @@ using Caravan_Excercise.Interfaces;
 
 namespace Caravan_Excercise.Models
 {
-    public class Huis : IBewoonbaar
+    public class Huis : Eigendom,IBewoonbaar
     {
         public int aantalSlaapkamers;
         public double bewoonbaarOppervlakte;
@@ -35,7 +35,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public Huis(int aantalSlaapkamers, double bewoonbaarOppervlakte) 
+        public Huis(int aantalSlaapkamers, double bewoonbaarOppervlakte, string eigenaar, double prijs) : base(eigenaar, prijs)
         {
             AantalSlaapkamers = aantalSlaapkamers;
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;

@@ -39,7 +39,7 @@ namespace Caravan_Excercise.Models
             } 
         }
 
-        public Caravan(int aantalSlaapkamers, double bewoonbaarOppervlakte, int aantalBanden, int gewicht) :base(aantalBanden, gewicht)
+        public Caravan(int aantalSlaapkamers, double bewoonbaarOppervlakte, int aantalBanden, int gewicht, string eigenaar, double prijs) :base(aantalBanden, gewicht, eigenaar, prijs)
         {
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
             AantalSlaapkamers = aantalSlaapkamers;

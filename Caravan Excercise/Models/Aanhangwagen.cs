@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
-    public class Aanhangwagen : ITrekbaar
+    public class Aanhangwagen : Eigendom, ITrekbaar
     {
         int aantalBanden;
         int gewicht;
@@ -43,12 +43,10 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public Aanhangwagen(int aantalBanden, int gewicht)
+        public Aanhangwagen(int aantalBanden, int gewicht, string eigenaar, double prijs):base(eigenaar,prijs)
         {
             this.AantalBanden = aantalBanden;
             this.Gewicht = gewicht;
-        }
-
-        
+        } 
     }
 }

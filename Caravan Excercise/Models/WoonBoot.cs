@@ -42,7 +42,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public WoonBoot(int aantalSlaapkamers, double bewoonbaarOppervlakte, int maximumSnelheid, string merk, int snelheid) :base(maximumSnelheid, merk, snelheid)
+        public WoonBoot(int aantalSlaapkamers, double bewoonbaarOppervlakte, int maximumSnelheid, string merk, int snelheid, string eigenaar, double prijs) :base(maximumSnelheid, merk, snelheid, eigenaar, prijs)
         {
             AantalSlaapkamers = aantalSlaapkamers;
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;

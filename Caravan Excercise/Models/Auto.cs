@@ -7,7 +7,7 @@ using Caravan_Excercise.Interfaces;
 
 namespace Caravan_Excercise.Models
 {
-    public class Auto : IVoertuig, ITrekker
+    public class Auto : Eigendom, IVoertuig, ITrekker
     {
         int maximumSnelheid;
         int snelheid;
@@ -146,7 +146,7 @@ namespace Caravan_Excercise.Models
 
         }
 
-        public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen)
+        public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen, string eigenaar, double prijs):base(eigenaar,prijs)
         {
             MaximumSnelheid = maximumSnelheid;
             Snelheid = snelheid;

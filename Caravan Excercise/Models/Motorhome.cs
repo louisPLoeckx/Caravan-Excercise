@@ -39,7 +39,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-        public Motorhome(int aantalSlaapkamer, double bewoonbaarOppervlakte, int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen) :base(maximumSnelheid, snelheid, maximaalTrekGewicht, merk, aanhangwagen)
+        public Motorhome(int aantalSlaapkamer, double bewoonbaarOppervlakte, int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen, string eigenaar, double prijs) :base(maximumSnelheid, snelheid, maximaalTrekGewicht, merk, aanhangwagen, eigenaar, prijs)
         {
             AantalSlaapkamers = aantalSlaapkamer;
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
