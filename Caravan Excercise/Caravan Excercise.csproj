@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IVoertuig.cs" />
     <Compile Include="Models\Aanhangwagen.cs" />
     <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\Beurs.cs" />
     <Compile Include="Models\Boot.cs" />
     <Compile Include="Models\Caravan.cs" />
     <Compile Include="Models\Eigendom.cs" />

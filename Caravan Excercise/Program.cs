@@ -21,6 +21,8 @@ namespace Caravan_Excercise
                 transportboot.Laden(1500);
                 transportboot.Versnel(500);
                 Console.WriteLine(transportboot);
+
+
             }
             catch (Exception e)
             {
