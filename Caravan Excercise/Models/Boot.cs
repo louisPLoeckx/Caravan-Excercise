@@ -19,7 +19,7 @@ namespace Caravan_Excercise.Models
             {
                 return maximumSnelheid;
             }
-            set
+            private set
             {
                 if (value >= 0)
                 {
@@ -34,7 +34,7 @@ namespace Caravan_Excercise.Models
             { 
                 return merk; 
             }
-            set 
+            private set 
             { 
                 merk = value; 
             }
@@ -46,7 +46,7 @@ namespace Caravan_Excercise.Models
             {
                 return snelheid;
             }
-            set
+            protected set
             {
                 if (value >= 0)
                 {

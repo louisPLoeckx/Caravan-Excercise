@@ -9,8 +9,8 @@ namespace Caravan_Excercise.Models
 {
     public class Caravan : Aanhangwagen, IBewoonbaar
     {
-        int aantalSlaapkamers;
-        double bewoonbaarOppervlakte;
+        private int aantalSlaapkamers;
+        private double bewoonbaarOppervlakte;
 
         public int AantalSlaapkamers 
         {

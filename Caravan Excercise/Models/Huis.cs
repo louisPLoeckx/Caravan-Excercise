@@ -5,8 +5,8 @@ namespace Caravan_Excercise.Models
 {
     public class Huis : Eigendom,IBewoonbaar
     {
-        public int aantalSlaapkamers;
-        public double bewoonbaarOppervlakte;
+        protected int aantalSlaapkamers;
+        protected double bewoonbaarOppervlakte;
 
         public virtual int AantalSlaapkamers
         {
@@ -14,7 +14,7 @@ namespace Caravan_Excercise.Models
             {
                 return aantalSlaapkamers;
             }
-            set 
+            protected set 
             {
                 if (value >= 0)
                 {
@@ -29,7 +29,7 @@ namespace Caravan_Excercise.Models
             {
                 return bewoonbaarOppervlakte;
             }
-            set 
+            private set 
             {
                 bewoonbaarOppervlakte = value;
             }

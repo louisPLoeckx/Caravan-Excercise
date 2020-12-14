@@ -39,12 +39,12 @@ namespace Caravan_Excercise.Models
 
         public void BepaalPrijs(double nieuwePrijs)
         {
-            throw new NotImplementedException();
+            Prijs = nieuwePrijs;
         }
 
         public void VerkoopAan(string nieuweEigenaar)
         {
-            throw new NotImplementedException();
+            Eigenaar = nieuweEigenaar;
         }
     }
 }

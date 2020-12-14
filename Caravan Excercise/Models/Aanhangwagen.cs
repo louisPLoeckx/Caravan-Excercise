@@ -9,8 +9,8 @@ namespace Caravan_Excercise.Models
 {
     public class Aanhangwagen : Eigendom, ITrekbaar
     {
-        int aantalBanden;
-        int gewicht;
+        private int aantalBanden;
+        private int gewicht;
 
         public int AantalBanden 
         { 

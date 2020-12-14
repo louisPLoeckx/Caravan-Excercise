@@ -18,7 +18,7 @@ namespace Caravan_Excercise.Models
             {
                 return aantalSlaapkamer;
             }
-            set
+            private set
             {
                 aantalSlaapkamer = 1;
             }
@@ -30,7 +30,7 @@ namespace Caravan_Excercise.Models
             {
                 return bewoonbaarOppervlakte;
             }
-            set 
+            private set 
             {
                 if (value >= 0)
                 {

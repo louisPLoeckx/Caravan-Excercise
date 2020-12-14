@@ -9,8 +9,8 @@ namespace Caravan_Excercise.Models
 {
     public class WoonBoot : Boot, IBewoonbaar
     {
-        public int aantalSlaapkamers;
-        public double bewoonbaarOppervlakte;
+        private int aantalSlaapkamers;
+        private double bewoonbaarOppervlakte;
 
         public int AantalSlaapkamers 
         {
@@ -18,7 +18,7 @@ namespace Caravan_Excercise.Models
             {
                 return aantalSlaapkamers;
             }
-            set 
+            private set 
             {
                 if (value <= 2)
                 {
@@ -33,7 +33,7 @@ namespace Caravan_Excercise.Models
             {
                 return bewoonbaarOppervlakte;
             }
-            set 
+            private set 
             {
                 if (value > 0)
                 {

@@ -9,10 +9,10 @@ namespace Caravan_Excercise.Models
 {
     public class Auto : Eigendom, IVoertuig, ITrekker
     {
-        int maximumSnelheid;
-        int snelheid;
-        int maximaalTrekGewicht;
-        string merk;
+        private int maximumSnelheid;
+        private int snelheid;
+        private int maximaalTrekGewicht;
+        private string merk;
         ITrekbaar aanhangwagen;
 
         public int MaximumSnelheid 
@@ -36,7 +36,7 @@ namespace Caravan_Excercise.Models
             {
                 return merk;
             }
-            set 
+            private set 
             {
                 merk = value;
             }
@@ -63,7 +63,7 @@ namespace Caravan_Excercise.Models
             {
                 return aanhangwagen;
             }
-            set 
+            private set 
             {
                 if (snelheid < 0 || aanhangwagen.Gewicht > MaximaalTrekGewicht)
                 {
@@ -84,7 +84,7 @@ namespace Caravan_Excercise.Models
             {
                 return maximaalTrekGewicht;
             }
-            set 
+            private set 
             {
                 maximaalTrekGewicht = value;
             }       
