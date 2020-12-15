@@ -98,11 +98,11 @@ namespace Caravan_Excercise.Models
             }
             else if(snelheid != 0)
             {
-                throw new Exception("Kan geen aanhangwagen koppelen. Snelheid niet 0");
+                throw new KoppelExeption( Snelheid,"Kan geen aanhangwagen koppelen. Snelheid niet 0 ");
             }
             else if (aanhangwagen.Gewicht > maximaalTrekGewicht)
             {
-                throw new Exception("Kan geen aanhangwagen koppelen. Het gewicht van aanhangwagen is groter dan maximaal trek gewicht");
+                throw new OverBeladenException(MaximaalTrekGewicht,aanhangwagen.Gewicht,"Kan geen aanhangwagen koppelen. Het gewicht van aanhangwagen is groter dan maximaal trek gewicht");
             }
         }
 

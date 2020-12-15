@@ -57,7 +57,9 @@
     <Compile Include="Models\Eigendom.cs" />
     <Compile Include="Models\Huis.cs" />
     <Compile Include="Models\Kasteel.cs" />
+    <Compile Include="Models\KoppelExeption.cs" />
     <Compile Include="Models\Motorhome.cs" />
+    <Compile Include="Models\OverBeladenException.cs" />
     <Compile Include="Models\Transportboot.cs" />
     <Compile Include="Models\WoonBoot.cs" />
     <Compile Include="Program.cs" />

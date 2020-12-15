@@ -13,7 +13,7 @@ namespace Caravan_Excercise
         {
             try
             {
-                Aanhangwagen KamionTrailer = new Aanhangwagen(1, 2000, "Jef", 9999d);
+                Aanhangwagen KamionTrailer = new Aanhangwagen(2000, 1, 2000, "Jef", 9999d);
                 Caravan SleurHut = new Caravan(1, 2.2, 4, 22, "Jim", 2000d);
                 Huis Home = new Huis(6, 800, "7th floor gang", 2000000);
                 Kasteel Steen = new Kasteel(5, 20000, "Juan", 9999d);
@@ -33,7 +33,7 @@ namespace Caravan_Excercise
                 beurs.Add(RV);
                 beurs.Add(transportboot);
                 beurs.Add(FloatingHome);
-                
+
                 beurs.GetBewoonbaarLijst();
                 foreach (var item in beurs.artikels)
                 {
