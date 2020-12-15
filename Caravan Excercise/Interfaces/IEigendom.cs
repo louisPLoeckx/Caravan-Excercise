@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Interfaces
 {
-    public interface IEigendom
+    public interface IEigendom: IComparable<IEigendom>
     {
         string Eigenaar { get; }
         double Prijs { get; }

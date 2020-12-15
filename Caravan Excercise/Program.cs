@@ -27,11 +27,15 @@ namespace Caravan_Excercise
                 beurs.Add(transportboot);
                 beurs.GetBewoonbaarLijst();
                 Console.WriteLine("Prijzen:");
-                Console.WriteLine(KamionTrailer.Prijs);
-                Console.WriteLine(SleurHut.Prijs);
-                Console.WriteLine(Steen.Prijs);
-                Console.WriteLine(transportboot.Prijs);
-                beurs.GetVoertuigLijst();
+                foreach (var item in beurs.artikels)
+                {
+                    Console.WriteLine(item);
+                }
+                Array.Sort(beurs.artikels);
+                foreach (var item in beurs.artikels)
+                {
+                    Console.WriteLine(item);
+                }
             }
             catch (Exception e)
             {

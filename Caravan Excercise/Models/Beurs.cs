@@ -16,9 +16,9 @@ namespace Caravan_Excercise.Models
         int number = 0;
         string eigenaar;
         double prijs;
-        public int CompareTo(object obj)
+        public int CompareTo(Eigendom eigendom)
         {
-            return prijs.CompareTo(obj);
+            return prijs.CompareTo(eigendom.Prijs);
         }
 
         public string Eigenaar
@@ -151,15 +151,15 @@ namespace Caravan_Excercise.Models
         }
         public IVoertuig[] GetVoertuigLijst()
         {
-            foreach (var item in artikels)
-            {
-                Console.WriteLine($"{item.ToString()}");
-            }
-            Array.Sort(artikels);
-            foreach (var item in artikels)
-            {
-                Console.WriteLine($"{item.ToString()}");
-            }
+            //foreach (var item in artikels)
+            //{
+            //    Console.WriteLine($"{item.ToString()}");
+            //}
+            //Array.Sort(artikels);
+            //foreach (var item in artikels)
+            //{
+            //    Console.WriteLine($"{item.ToString()}");
+            //}
             IVoertuig[] driveable = new IVoertuig[0];
             int counter = 0;
             int counterTwee = 0;
@@ -181,6 +181,11 @@ namespace Caravan_Excercise.Models
             }
             Console.WriteLine($"Artikels that are driveable: {driveable.Length}");
             return driveable;
+        }
+
+        public int CompareTo(IEigendom eigendom)
+        {
+            return Prijs.CompareTo(eigendom.Prijs);
         }
     }
 }
