@@ -42,6 +42,7 @@ namespace Caravan_Excercise.Models
             number++;
             Array.Resize(ref artikels, number);
             artikels[number - 1] = eigendom;
+            Array.Sort(artikels);
         }
 
         public void BepaalPrijs(double nieuwePrijs)
@@ -179,6 +180,7 @@ namespace Caravan_Excercise.Models
                     counterTwee++;
                 }
             }
+            
             Console.WriteLine($"Artikels that are driveable: {driveable.Length}");
             return driveable;
         }

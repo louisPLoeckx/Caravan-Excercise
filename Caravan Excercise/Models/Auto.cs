@@ -154,13 +154,12 @@ namespace Caravan_Excercise.Models
 
         }
 
-        public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk, ITrekbaar aanhangwagen, string eigenaar, double prijs):base(eigenaar,prijs)
+        public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk,string eigenaar, double prijs):base(eigenaar,prijs)
         {
             MaximumSnelheid = maximumSnelheid;
             Snelheid = snelheid;
             MaximaalTrekGewicht = maximaalTrekGewicht;
             Merk = merk;
-            Aanhangwagen = aanhangwagen;
         }
     }
 }
