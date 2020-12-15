@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
-    public abstract class Eigendom : IEigendom
+    public abstract class Eigendom : IEigendom, IComparable<Eigendom>
     {
         private string eigenaar;
 
@@ -30,7 +30,6 @@ namespace Caravan_Excercise.Models
                 }
             }
         }
-
         public Eigendom(string eigenaar, double prijs)
         {
             Eigenaar = eigenaar;
@@ -45,6 +44,15 @@ namespace Caravan_Excercise.Models
         public void VerkoopAan(string nieuweEigenaar)
         {
             Eigenaar = nieuweEigenaar;
+        }
+
+        public int CompareTo(Eigendom eigendom)
+        {
+            return this.Prijs.CompareTo(eigendom.Prijs);
+        }
+        public override string ToString()
+        {
+            return $"{Eigenaar}: {Prijs}";
         }
     }
 }

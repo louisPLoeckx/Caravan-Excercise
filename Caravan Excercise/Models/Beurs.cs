@@ -12,21 +12,25 @@ namespace Caravan_Excercise.Models
         //List<IEigendom> artikels = new List<IEigendom>();
 
         //Eigendom[] artikels;
-        IEigendom[] artikels = new IEigendom[0];
+        public IEigendom[] artikels = new IEigendom[0];
         int number = 0;
         string eigenaar;
         double prijs;
+        public int CompareTo(object obj)
+        {
+            return prijs.CompareTo(obj);
+        }
 
-        public string Eigenaar 
+        public string Eigenaar
         {
             get { return eigenaar; }
             private set { eigenaar = value; }
         }
 
-        public double Prijs 
+        public double Prijs
         {
             get { return prijs; }
-            private set { prijs = value;  }
+            private set { prijs = value; }
         }
         public Beurs(string eigenaar, double prijs)
         {
@@ -35,9 +39,9 @@ namespace Caravan_Excercise.Models
         }
         public void Add(IEigendom eigendom)
         {
-            artikels[number] = eigendom;
             number++;
             Array.Resize(ref artikels, number);
+            artikels[number - 1] = eigendom;
         }
 
         public void BepaalPrijs(double nieuwePrijs)
@@ -53,6 +57,7 @@ namespace Caravan_Excercise.Models
         {
             IBelaadbaar[] remork = new IBelaadbaar[0];
             int counter = 0;
+            int counterTwee = 0;
             for (int i = 0; i < artikels.Length; i++)
             {
                 if (artikels[i] is IBelaadbaar)
@@ -65,15 +70,18 @@ namespace Caravan_Excercise.Models
             {
                 if (artikels[i] is IBelaadbaar)
                 {
-                    remork[i] = (IBelaadbaar)artikels[i];
+                    remork[counterTwee] = (IBelaadbaar)artikels[i];
+                    counterTwee++;
                 }
             }
+            Console.WriteLine($"Artikels that are loadable: {remork.Length}");
             return remork;
         }
         public IBewoonbaar[] GetBewoonbaarLijst()
         {
             IBewoonbaar[] woonst = new IBewoonbaar[0];
             int counter = 0;
+            int counterTwee = 0;
             for (int i = 0; i < artikels.Length; i++)
             {
                 if (artikels[i] is IBewoonbaar)
@@ -84,12 +92,95 @@ namespace Caravan_Excercise.Models
             Array.Resize(ref woonst, counter);
             for (int i = 0; i < artikels.Length; i++)
             {
-                if (artikels[i] is IBelaadbaar)
+                if (artikels[i] is IBewoonbaar)
                 {
-                    woonst[i] = (IBewoonbaar)artikels[i];
+                    woonst[counterTwee] = (IBewoonbaar)artikels[i];
+                    counterTwee++;
                 }
             }
+            Console.WriteLine($"Artikels that are Livable: {woonst.Length}");
             return woonst;
+        }
+        public ITrekbaar[] GetTrekbaarLijst()
+        {
+            ITrekbaar[] pullable = new ITrekbaar[0];
+            int counter = 0;
+            int counterTwee = 0;
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is ITrekbaar)
+                {
+                    counter++;
+                }
+            }
+            Array.Resize(ref pullable, counter);
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is ITrekbaar)
+                {
+                    pullable[counterTwee] = (ITrekbaar)artikels[i];
+                    counterTwee++;
+                }
+            }
+            Console.WriteLine($"Artikels that are pullable: {pullable.Length}");
+            return pullable;
+        }
+        public ITrekker[] GetTrekkerLijst()
+        {
+            ITrekker[] trekker = new ITrekker[0];
+            int counter = 0;
+            int counterTwee = 0;
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is ITrekker)
+                {
+                    counter++;
+                }
+            }
+            Array.Resize(ref trekker, counter);
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is ITrekker)
+                {
+                    trekker[counterTwee] = (ITrekker)artikels[i];
+                    counterTwee++;
+                }
+            }
+            Console.WriteLine($"Artikels that are pullers: {trekker.Length}");
+            return trekker;
+        }
+        public IVoertuig[] GetVoertuigLijst()
+        {
+            foreach (var item in artikels)
+            {
+                Console.WriteLine($"{item.ToString()}");
+            }
+            Array.Sort(artikels);
+            foreach (var item in artikels)
+            {
+                Console.WriteLine($"{item.ToString()}");
+            }
+            IVoertuig[] driveable = new IVoertuig[0];
+            int counter = 0;
+            int counterTwee = 0;
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is IVoertuig)
+                {
+                    counter++;
+                }
+            }
+            Array.Resize(ref driveable, counter);
+            for (int i = 0; i < artikels.Length; i++)
+            {
+                if (artikels[i] is IVoertuig)
+                {
+                    driveable[counterTwee] = (IVoertuig)artikels[i];
+                    counterTwee++;
+                }
+            }
+            Console.WriteLine($"Artikels that are driveable: {driveable.Length}");
+            return driveable;
         }
     }
 }
