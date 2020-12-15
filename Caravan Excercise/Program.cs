@@ -23,7 +23,7 @@ namespace Caravan_Excercise
                 WoonBoot FloatingHome = new WoonBoot(4, 400, 100, "Dutch Brand", 25, "Dutchy", 400000);
                 Beurs beurs = new Beurs("Marc", 500000);
 
-                //transportboot.Laden(50);
+                //Aanhangwagen.Laden(50);
                 //transportboot.Versnel(50);
                 beurs.Add(KamionTrailer);
                 beurs.Add(SleurHut);
