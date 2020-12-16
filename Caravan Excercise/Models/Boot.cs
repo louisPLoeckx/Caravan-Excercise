@@ -107,5 +107,9 @@ namespace Caravan_Excercise.Models
             Merk = merk;
             Snelheid = snelheid;
         }
+        public override string ToString()
+        {
+            return base.ToString() + $" Snelheid: {snelheid} maximumsnelheid: {maximumSnelheid} merk: {merk}.";
+        }
     }
 }

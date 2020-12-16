@@ -43,5 +43,9 @@ namespace Caravan_Excercise.Models
         {
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
         }
+        public override string ToString()
+        {
+            return base.ToString() + $"bewoonbare oppervlakte: {bewoonbaarOppervlakte}";
+        }
     }
 }

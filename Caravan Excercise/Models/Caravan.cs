@@ -39,10 +39,14 @@ namespace Caravan_Excercise.Models
             } 
         }
 
-        public Caravan(int aantalSlaapkamers, double bewoonbaarOppervlakte, int aantalBanden, int gewicht, string eigenaar, double prijs) :base(aantalBanden, gewicht, eigenaar, prijs)
+        public Caravan(int maximumGewicht, int aantalSlaapkamers, double bewoonbaarOppervlakte, int aantalBanden, int gewicht, string eigenaar, double prijs) :base(maximumGewicht, aantalBanden, gewicht, eigenaar, prijs)
         {
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
             AantalSlaapkamers = aantalSlaapkamers;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $" Bewoonbare oppervlakte: {bewoonbaarOppervlakte} aantal slaapkamers: {aantalSlaapkamers}";
         }
     }
 }

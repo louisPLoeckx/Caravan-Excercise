@@ -83,5 +83,9 @@ namespace Caravan_Excercise.Models
         {
             throw new NotImplementedException();
         }
+        public override string ToString()
+        {
+            return base.ToString() + $" Maximum laadgewicht: {maximumLaadgewicht} aantal banden: {aantalBanden} het gewicht: {gewicht}";
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace Caravan_Excercise.Models
         }
         public override string ToString()
         {
-            return $"{Eigenaar}: {Prijs}";
+            return $"Naam eigenaar: {Eigenaar} prijs: {Prijs}";
         }
 
         public int CompareTo(IEigendom eigendom)

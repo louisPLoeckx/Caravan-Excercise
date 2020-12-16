@@ -27,5 +27,9 @@ namespace Caravan_Excercise.Models
         {
             AantalSlaapkamers = aantalSlaapkamers;
         }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

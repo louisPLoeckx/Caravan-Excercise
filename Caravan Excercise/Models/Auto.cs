@@ -161,5 +161,9 @@ namespace Caravan_Excercise.Models
             MaximaalTrekGewicht = maximaalTrekGewicht;
             Merk = merk;
         }
+        public override string ToString()
+        {
+            return base.ToString() + $" Maximum trekgewicht: {maximaalTrekGewicht} snelheid: {snelheid} maximumsnelheid: {maximumSnelheid} merk: {merk}.";
+        }
     }
 }

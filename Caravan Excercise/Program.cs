@@ -14,7 +14,7 @@ namespace Caravan_Excercise
             try
             {
                 Aanhangwagen KamionTrailer = new Aanhangwagen(2000, 1, 2000, "Jef", 9999d);
-                Caravan SleurHut = new Caravan(1, 2.2, 4, 22, "Jim", 2000d);
+                Caravan SleurHut = new Caravan(2500, 1, 2.2, 4, 22, "Jim", 2000d);
                 Huis Home = new Huis(6, 800, "7th floor gang", 2000000);
                 Kasteel Steen = new Kasteel(5, 20000, "Juan", 9999d);
                 Auto Jeep = new Auto(140, 25, 1000, "Wrangler", "Yannick", 40000);
@@ -34,10 +34,51 @@ namespace Caravan_Excercise
                 beurs.Add(transportboot);
                 beurs.Add(FloatingHome);
 
-                beurs.GetBewoonbaarLijst();
-                foreach (var item in beurs.artikels)
+                Console.WriteLine("Kies uit de volgende artikels: ");
+                Console.WriteLine("1. Belaadbar\n2. Bewoonbaar\n3. Alle info\n4. Trekbaar\n5. Trekker\n6. Voertuig");
+                Console.Write("Type het gekozen nummer: ");
+                string keuzeGebruiker = Console.ReadLine();
+                switch (keuzeGebruiker)
                 {
-                    Console.WriteLine($"{item.Eigenaar} {item.Prijs}");
+                    case "1":
+                        foreach (var item in beurs.GetBelaadbaarLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case "2":
+                        foreach (var item in beurs.GetBewoonbaarLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case "3":
+                        foreach (var item in beurs.artikels)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case "4":
+                        foreach (var item in beurs.GetTrekbaarLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case "5":
+                        foreach (var item in beurs.GetTrekkerLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case "6":
+                        foreach (var item in beurs.GetVoertuigLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
             }
             catch (Exception e)
