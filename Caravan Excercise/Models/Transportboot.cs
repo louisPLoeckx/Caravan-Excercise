@@ -1,17 +1,14 @@
 ﻿using Caravan_Excercise.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
     public class Transportboot : Boot, IBelaadbaar
     {
         private bool IsSunk;
-        public int HuidigeBelading { get; set; }
-        public int MaximumLaadgewicht { get; set; }
+        public int HuidigeBelading { get; private set; }
+        public int MaximumLaadgewicht { get; private set; }
+
         public void Laden(int gewicht)
         {
             HuidigeBelading += gewicht;
@@ -22,10 +19,12 @@ namespace Caravan_Excercise.Models
                 throw new InvalidOperationException("HuidigeBelading is groter dan MaximumLaadgewicht. Schip is gezonken.");
             }
         }
+
         public Transportboot(int maximumSnelheid, string merk, int snelheid, string eigenaar, double prijs, int maximumLaadgewicht) : base(maximumSnelheid, merk, snelheid, eigenaar, prijs)
         {
             MaximumLaadgewicht = maximumLaadgewicht;
         }
+
         public void Lossen(int gewicht)
         {
             if (IsSunk)
@@ -37,6 +36,7 @@ namespace Caravan_Excercise.Models
                 HuidigeBelading -= gewicht;
             }
         }
+
         public override void Versnel(int versnelling)
         {
             if (IsSunk)
@@ -48,6 +48,7 @@ namespace Caravan_Excercise.Models
                 base.Versnel(versnelling);
             } 
         }
+
         public override void Vertraag(int vertraging)
         {
             if (IsSunk)
@@ -59,6 +60,7 @@ namespace Caravan_Excercise.Models
                 base.Vertraag(vertraging);
             }
         }
+
         public override string ToString()
         {
             return $"Belading: {HuidigeBelading} Maximum laadgewicht: {MaximumLaadgewicht}";

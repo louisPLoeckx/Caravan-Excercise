@@ -1,5 +1,4 @@
-﻿
-using Caravan_Excercise.Interfaces;
+﻿using Caravan_Excercise.Interfaces;
 
 namespace Caravan_Excercise.Models
 {
@@ -40,6 +39,7 @@ namespace Caravan_Excercise.Models
             AantalSlaapkamers = aantalSlaapkamers;
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
         }
+
         public override string ToString()
         {
             return base.ToString() + $" Aantal slaapkamers: {aantalSlaapkamers} bewoonbare oppervlakte: {bewoonbaarOppervlakte}";

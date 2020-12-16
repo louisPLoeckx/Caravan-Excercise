@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caravan_Excercise.Models;
 
 namespace Caravan_Excercise
@@ -23,8 +19,6 @@ namespace Caravan_Excercise
                 WoonBoot FloatingHome = new WoonBoot(4, 400, 100, "Dutch Brand", 25, "Dutchy", 400000);
                 Beurs beurs = new Beurs("Marc", 500000);
 
-                //Aanhangwagen.Laden(50);
-                //transportboot.Versnel(50);
                 beurs.Add(KamionTrailer);
                 beurs.Add(SleurHut);
                 beurs.Add(Home);
@@ -35,49 +29,53 @@ namespace Caravan_Excercise
                 beurs.Add(FloatingHome);
 
                 Console.WriteLine("Kies uit de volgende artikels: ");
-                Console.WriteLine("1. Belaadbar\n2. Bewoonbaar\n3. Alle info\n4. Trekbaar\n5. Trekker\n6. Voertuig");
+                Console.WriteLine("1. Belaadbar\n2. Bewoonbaar\n3. Voertuig\n4. Trekbaar\n5. Trekker\n6. Alle info");
                 Console.Write("Type het gekozen nummer: ");
-                string keuzeGebruiker = Console.ReadLine();
+                int keuzeGebruiker = int.Parse(Console.ReadLine());
+
                 switch (keuzeGebruiker)
                 {
-                    case "1":
+                    case 1:
                         foreach (var item in beurs.GetBelaadbaarLijst())
                         {
                             Console.WriteLine(item);
                         }
                         break;
-                    case "2":
+                    case 2:
                         foreach (var item in beurs.GetBewoonbaarLijst())
                         {
                             Console.WriteLine(item);
                         }
                         break;
-                    case "3":
-                        foreach (var item in beurs.artikels)
-                        {
-                            Console.WriteLine(item);
-                        }
-                        break;
-                    case "4":
-                        foreach (var item in beurs.GetTrekbaarLijst())
-                        {
-                            Console.WriteLine(item);
-                        }
-                        break;
-                    case "5":
-                        foreach (var item in beurs.GetTrekkerLijst())
-                        {
-                            Console.WriteLine(item);
-                        }
-                        break;
-                    case "6":
+                    case 3:
                         foreach (var item in beurs.GetVoertuigLijst())
                         {
                             Console.WriteLine(item);
                         }
                         break;
-
+                    case 4:
+                        foreach (var item in beurs.GetTrekbaarLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case 5:
+                        foreach (var item in beurs.GetTrekkerLijst())
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case 6:
+                        foreach (var item in beurs.artikels)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+                    case 42:
+                        Console.WriteLine("Artikel is not in library, yet it is the answer to life the universe and everything!");
+                        break;
                     default:
+                        Console.WriteLine("Artikel not in Library");
                         break;
                 }
             }

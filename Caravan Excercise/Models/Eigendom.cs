@@ -1,9 +1,4 @@
 ﻿using Caravan_Excercise.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
@@ -30,6 +25,7 @@ namespace Caravan_Excercise.Models
                 }
             }
         }
+
         public Eigendom(string eigenaar, double prijs)
         {
             Eigenaar = eigenaar;
@@ -45,6 +41,7 @@ namespace Caravan_Excercise.Models
         {
             Eigenaar = nieuweEigenaar;
         }
+
         public override string ToString()
         {
             return $"Naam eigenaar: {Eigenaar} prijs: {Prijs}";

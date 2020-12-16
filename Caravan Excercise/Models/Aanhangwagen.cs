@@ -1,9 +1,5 @@
 ﻿using Caravan_Excercise.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
@@ -30,6 +26,7 @@ namespace Caravan_Excercise.Models
                 //possibly add an exception try catch
             }
         }
+
         public int Gewicht
         {
             get
@@ -45,10 +42,7 @@ namespace Caravan_Excercise.Models
             }
         }
 
-
-
         public int MaximumLaadgewicht { get; set; }
-       
 
         public int HuidigeBelading
         {
@@ -76,13 +70,15 @@ namespace Caravan_Excercise.Models
 
         public void Laden(int gewicht)
         {
-            throw new NotImplementedException();
+            Gewicht += gewicht;
         }
 
         public void Lossen(int gewicht)
         {
-            throw new NotImplementedException();
+            Gewicht -= gewicht;
+
         }
+
         public override string ToString()
         {
             return base.ToString() + $" Maximum laadgewicht: {maximumLaadgewicht} aantal banden: {aantalBanden} het gewicht: {gewicht}";

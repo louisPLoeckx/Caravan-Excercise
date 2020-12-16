@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caravan_Excercise.Interfaces;
 
 namespace Caravan_Excercise.Models
@@ -67,14 +63,12 @@ namespace Caravan_Excercise.Models
             {
                 if (snelheid < 0 || aanhangwagen.Gewicht > MaximaalTrekGewicht)
                 {
-                    Console.WriteLine("Exception test Aanhangwagen Auto");                    
-                    //exception
+                    throw new KoppelExeption(Snelheid, "Kan geen aanhangwagen koppelen. Snelheid niet 0 ");
                 }
                 else
                 {
                     aanhangwagen = value;
                 }
-
             }
         }
 
@@ -125,7 +119,6 @@ namespace Caravan_Excercise.Models
                 Console.WriteLine($"Speed {snelheid}km/h");
                 Console.WriteLine("Maximum Speed has already been reached!");
             }
-
         }
 
         public void Vertraag(int vertraging)
@@ -151,7 +144,6 @@ namespace Caravan_Excercise.Models
                 Console.WriteLine($"Speed {snelheid}km/h");
                 Console.WriteLine("The car has stopped and cannot go into reverse");
             };
-
         }
 
         public Auto(int maximumSnelheid, int snelheid, int maximaalTrekGewicht, string merk,string eigenaar, double prijs):base(eigenaar,prijs)
@@ -161,6 +153,7 @@ namespace Caravan_Excercise.Models
             MaximaalTrekGewicht = maximaalTrekGewicht;
             Merk = merk;
         }
+
         public override string ToString()
         {
             return base.ToString() + $" Maximum trekgewicht: {maximaalTrekGewicht} snelheid: {snelheid} maximumsnelheid: {maximumSnelheid} merk: {merk}.";

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Caravan_Excercise.Models
 {
@@ -27,6 +23,7 @@ namespace Caravan_Excercise.Models
         {
             AantalSlaapkamers = aantalSlaapkamers;
         }
+
         public override string ToString()
         {
             return base.ToString();

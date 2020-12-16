@@ -1,9 +1,5 @@
 ﻿using Caravan_Excercise.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caravan_Excercise.Models
 {
@@ -152,15 +148,6 @@ namespace Caravan_Excercise.Models
         }
         public IVoertuig[] GetVoertuigLijst()
         {
-            //foreach (var item in artikels)
-            //{
-            //    Console.WriteLine($"{item.ToString()}");
-            //}
-            //Array.Sort(artikels);
-            //foreach (var item in artikels)
-            //{
-            //    Console.WriteLine($"{item.ToString()}");
-            //}
             IVoertuig[] driveable = new IVoertuig[0];
             int counter = 0;
             int counterTwee = 0;
